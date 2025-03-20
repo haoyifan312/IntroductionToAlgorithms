@@ -1,29 +1,34 @@
 #include "pch.h"
-#include "sort\sort.h"
+#include "sort\mergeSort.h"
 
-using namespace intro_algs;
+using namespace sort;
 
-TEST(TestMergeSort, TestMergeSortBasic) {
-	std::vector<int> numbers = { 5, 2, 4, 6, 1, 3 };
+TEST(TestMergeSort, TestMergeFull) {
+	std::vector<int> numbers = { 1, 3, 5, 7, 2, 4, 6, 8 };
 	auto numbers_sorted = numbers;
 	std::sort(numbers_sorted.begin(), numbers_sorted.end());
-	mergSort(numbers);
+	merge(numbers, 0, 3, 7);
 	EXPECT_EQ(numbers, numbers_sorted);
 }
 
-TEST(TestMergeSort, TestMergeSortDecreasing) {
-	std::vector<int> numbers = { 5, 2, 4, 6, 1, 3 };
+TEST(TestMergeSort, TestMergePartial) {
+	std::vector<int> numbers = { 11, 1, 3, 5, 7, 2, 4, 6, 8, 3, 5 };
+	merge(numbers, 1, 4, 8);
+	EXPECT_EQ(numbers, std::vector<int>({ 11, 1, 2, 3, 4, 5, 6, 7, 8, 3, 5 }));
+}
+
+TEST(TestMergeSort, TestMergeSortFull) {
+	std::vector<int> numbers = { 1, 3, 5, 7, 2, 4, 6, 8 };
 	auto numbers_sorted = numbers;
-	std::sort(numbers_sorted.begin(), numbers_sorted.end(), std::greater<int>());
-	mergSort(numbers, [](auto a, auto b) {return a < b; });
+	std::sort(numbers_sorted.begin(), numbers_sorted.end());
+	mergeSort(numbers, 0, 7);
 	EXPECT_EQ(numbers, numbers_sorted);
 }
 
-TEST(TestMergeSort, TestMergeSortWithSame) {
-	std::vector<int> numbers = { 31, 41, 59, 26, 41, 58};
+TEST(TestMergeSort, TestMergeSortPartial) {
+	std::vector<int> numbers = { 11, 1, 3, 5, 7, 2, 4, 6, 8, 3, 5 };
+	mergeSort(numbers, 0, numbers.size()-1);
 	auto numbers_sorted = numbers;
 	std::sort(numbers_sorted.begin(), numbers_sorted.end());
-	mergSort(numbers);
-
 	EXPECT_EQ(numbers, numbers_sorted);
 }

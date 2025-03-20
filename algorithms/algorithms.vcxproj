@@ -143,7 +143,8 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="src\random\random.h" />
     <ClInclude Include="src\search\search.h" />
-    <ClInclude Include="src\sort\sort.h" />
+    <ClInclude Include="src\sort\insertionSort.h" />
+    <ClInclude Include="src\sort\mergeSort.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="algorithms.cpp" />
@@ -155,7 +156,8 @@
     </ClCompile>
     <ClCompile Include="src\random\random.cpp" />
     <ClCompile Include="src\search\search.cpp" />
-    <ClCompile Include="src\sort\sort.cpp" />
+    <ClCompile Include="src\sort\insertionSort.cpp" />
+    <ClCompile Include="src\sort\mergeSort.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

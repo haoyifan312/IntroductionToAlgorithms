@@ -30,7 +30,7 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\sort\sort.h">
+    <ClInclude Include="src\sort\insertionSort.h">
       <Filter>sort</Filter>
     </ClInclude>
     <ClInclude Include="src\search\search.h">
@@ -38,6 +38,9 @@
     </ClInclude>
     <ClInclude Include="src\random\random.h">
       <Filter>random</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sort\mergeSort.h">
+      <Filter>sort</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -47,7 +50,7 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\sort\sort.cpp">
+    <ClCompile Include="src\sort\insertionSort.cpp">
       <Filter>sort</Filter>
     </ClCompile>
     <ClCompile Include="src\search\search.cpp">
@@ -55,6 +58,9 @@
     </ClCompile>
     <ClCompile Include="src\random\random.cpp">
       <Filter>random</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sort\mergeSort.cpp">
+      <Filter>sort</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

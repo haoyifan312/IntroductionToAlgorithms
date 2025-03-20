@@ -9,7 +9,7 @@ const std::vector<bool> addBinary(const std::vector<bool>& a, const std::vector<
 
 	auto ret = std::vector<bool>(size + 1, 0);
 	bool addDigit = false;
-	for (int i = size - 1; i >= 0; --i)
+	for (int i = (int)size - 1; i >= 0; --i)
 	{
 		if (a[i] && b[i])
 		{
