@@ -13,6 +13,27 @@ TEST(TestLinearSearch, TestLinearSearch)
 	EXPECT_EQ(linearSearch(numbers, 10), -1);
 }
 
+TEST(TestBinarySearch, TestBinarySearchByWhile)
+{
+	std::vector<int> numbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
+
+	for (int i = 0; i < numbers.size(); ++i)
+	{
+		EXPECT_EQ(binarySearchByWhile(numbers, numbers[i], 0, numbers.size()-1), i);
+	}
+	EXPECT_EQ(binarySearchByWhile(numbers, 10, 0, numbers.size()-1), -1);
+}
+
+TEST(TestBinarySearch, TestBinarySearchByRecursion)
+{
+	std::vector<int> numbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8 };
+
+	for (int i = 0; i < numbers.size(); ++i)
+	{
+		EXPECT_EQ(binarySearchByRecursion(numbers, numbers[i], 0, numbers.size() - 1), i);
+	}
+	EXPECT_EQ(binarySearchByRecursion(numbers, 10, 0, numbers.size() - 1), -1);
+}
 
 TEST(TestBinaryAdd, TestBinaryAdd)
 {
